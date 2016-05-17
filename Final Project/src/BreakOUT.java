@@ -9,7 +9,6 @@ import javax.swing.JFrame;
 public class BreakOUT extends Canvas
 	{
 		private static final long	serialVersionUID	= 1L;
-		int velX = 0, velY = 0;
 		public static void main(String[] args)
 			{
 				BreakOUT canvas = new BreakOUT();
@@ -47,42 +46,31 @@ public class BreakOUT extends Canvas
 		    	{
 		    		my =-my;
 		    	}
-		    graphics.setColor(Color.gray);
-		    graphics.fillRect(250, 560, 100, 10);
-		    
+		    graphics.setColor(Color.red);
+		    graphics.fillRect(150, 125, 300, 300);
+		    if(x == 130 && y > 125 && y < 400)
+		    	{
+		    		mx =-mx;
+		    	}
+		    if(y == 420 && x > 125 && x < 400)
+		    	{
+		    		my =-my;
+		    	}
+		    if(x == 445 && y > 125 && y < 400)
+		    	{
+		    		mx =-mx;
+		    	}
+		    if(y == 111 && x > 125 && x < 400)
+		    	{
+		    		my =-my;
+		    	}
 			}
-		}
-		public void keyPressed(KeyEvent e)
-		{
-			int key = e.getKeyCode();
-			
-			if(key == KeyEvent.VK_A)
-				{
-					velX = -2;
-				}
-			if(key == KeyEvent.VK_D)
-				{
-					velX = 2;
-				}
-		}
-		public void keyReleased(KeyEvent e)
-		{
-			int key = e.getKeyCode();
-			
-			if(key == KeyEvent.VK_A)
-				{
-					velX = 0;
-				}
-			if(key == KeyEvent.VK_D)
-				{
-					velX = 0;
-				}
 		}
 		public void delay()
 			{
 	        try
 	        	{
-				Thread.sleep(10);
+				Thread.sleep((int)(Math.random()*15));
 				} catch (InterruptedException e)
 	        	{
 				e.printStackTrace();
